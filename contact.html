@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="stylesheet.css" rel="stylesheet">
+    <title>Contact</title>
+</head>
+<body>
+    <header>
+        <a  href="index.html"><img src="images/smarterfitness_logo_v2_gold.png" class="logo"></a>
+        <img src="images/hamburger_icon2.png" id="hamburger_icon" alt="hamburger-menu">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="posts.html">Posts</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active_link">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Contact</h1>
+        <p>If there is anything we can help with, pleause let us know.</p>
+        <p>By submitting a form, you are sending a message to our inbox signed with your name and email. We will try to answer you on your email as soon as possible.</p>
+        <form class="contactForm">
+            <p class="validation name">Name (Should be more than 5 characters long)</p>
+            <input type="text" id="name" name="name" class="validation_input">
+            <p class="validation email">Email (Must be a valid email)</p>
+            <input type="text" id="email" name="email" class="validation_input">
+            <p class="validation subject">Subject (Should be more than 15 characters long)</p>
+            <input type="text" id="subject" name="subject" class="validation_input">
+            <p class="validation message">Message (Should be more than 25 characters long)</p>
+            <textarea id="message" name="message" class="validation_input"></textarea>
+            <button class="ctaBTN" type="submit" id="submitBTN">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <div class="footer_line"></div>
+        <img src="images/smarterfitness_logo_v2_gold.png" class="footer_logo">
+        <div class="footer_links">
+            <a href="index.html">Home</a>
+            <a href="posts.html">Posts</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active_link">Contact</a>
+        </div>
+    </footer>
+    <script src="js/ham_menu.js"></script>
+    <script src="js/form.js"></script> 
+</body>
+</html>
