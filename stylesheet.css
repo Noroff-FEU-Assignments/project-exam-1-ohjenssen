@@ -356,8 +356,9 @@ footer div a {
     .modalImage{
         /* max-width: 100%;
         min-height: 100px; */
-        max-width: 1000px;
-        max-height: 1000px;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 100px auto;
     }
 
     .footer_links {
