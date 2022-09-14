@@ -353,6 +353,13 @@ footer div a {
         width: 33.3333%;
     }
 
+    .modalImage{
+        /* max-width: 100%;
+        min-height: 100px; */
+        max-width: 1000px;
+        max-height: 1000px;
+    }
+
     .footer_links {
         justify-content: flex-start;
     }
