@@ -15,7 +15,7 @@ const getPosts = async () => {
         
         for (let i = 0; i < posts.length; i++){
             const featuredImage = posts[i]._embedded["wp:featuredmedia"][0]["source_url"]; // Selecting image
-            const id = posts[i].id; // Giving each post a unique id in the query parameter
+            const id = posts[i].id; // Selecting each posts unique id to use in the query parameter
             
             
             postsSection.innerHTML +=   `<div class="somePost"">

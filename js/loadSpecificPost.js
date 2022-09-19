@@ -22,10 +22,10 @@ const loadSpecificPost = async (url) => {
 
     pageTitle.innerHTML =`<h1>${post.title.rendered}</h1>`;
             
-    articleTop.innerHTML =  `<h2>${post.excerpt.rendered}</h2>
+    articleTop.innerHTML =  `${post.excerpt.rendered}
                             <img src="${featuredImage}" class="featuredImage">`;
 
-    bodyContent.innerHTML = `${post.content.rendered}`;
+    bodyContent.innerHTML = `${post.content.rendered} <p>(Click to enlarge)</p>`;
 
     const pictureContent = document.querySelectorAll("figure img");
 

@@ -1,48 +1,54 @@
-const sliderWrapper = document.querySelector(".slider-wrapper")
-const slidesContainer = document.getElementById("slides-container");
-const prevButton = document.getElementById("slide-arrow-prev")
-const nextButton = document.getElementById("slide-arrow-next")
+const crselContainer = document.querySelector(".crselContainer");
+const crselSlide = document.getElementsByClassName("crselSlide");
 
-const url = "https://smarterfitness.oskarjenssen.com/wp-json/wp/v2/posts?per_page=100&_embed";
+let slideIndex = 1;
+
+function plusSlides(x) {
+    showSlides(slideIndex += x);
+}
+
+function showSlides(x){
+
+    if (x > crselSlide.length) {
+        slideIndex = 1;
+    }
+    if (x < 1) {
+        slideIndex = crselSlide.length;
+    }
+
+    for (let i = 0; i < crselSlide.length; i++){
+        crselSlide[i].style.display = "none";
+    }
+
+    crselSlide[slideIndex - 1].style.display = "block";
+}
+
+const url = "https://smarterfitness.oskarjenssen.com/wp-json/wp/v2/posts?&_embed";
 
 const getPosts = async (url) => {
     const response= await fetch(url);
     const posts = await response.json();
+
+    crselContainer.innerHTML = `
+                                    <button class="arrow-left" onclick="plusSlides(-1)">&#10094;</button>
+                                    <button class="arrow-right" onclick="plusSlides(1)">&#10095;</button>`;
     
-    for (let i = 0; i < 4; i++){
+    for (let i = 0; i < posts.length; i++){
         const featuredImage = posts[i]._embedded["wp:featuredmedia"][0]["source_url"];
         const id = posts[i].id;
 
-        slidesContainer.innerHTML += `
-        <li class="slide">
-            <a href="specificPost.html?id=${id}">
-                <img src="${featuredImage}" class="carouselImg">
-                <button class="carouselBtn">View</button>
-            </a>
-        </li>`;
-    }
+        crselContainer.innerHTML += `
+                                        <div class="crselSlide">
+                                            <img src="${featuredImage}" class="crselImg">
+                                            <div class="txtContainer">
+                                                <a class="crselText" href="specificPost.html?id=${id}">${posts[i].title.rendered}</a>
+                                            <div>
+                                        </div>`;
 
-    const slide = document.querySelector(".slide")
-    
-    nextButton.addEventListener("click", (event) => {
-        const slideWidth = slide.clientWidth;
-        slidesContainer.scrollLeft += slideWidth;
-    })
-    
-    prevButton.addEventListener("click", (event) => {
-        const slideWidth = slide.clientWidth;
-        slidesContainer.scrollLeft -= slideWidth;
-    })
+    }
+    showSlides(slideIndex);
+
+
 }
 
 getPosts(url);
-
-// nextButton.addEventListener("click", (event) => {
-//     const slideWidth = slide.clientWidth;
-//     slidesContainer.scrollLeft += slideWidth;
-// })
-
-// prevButton.addEventListener("click", (event) => {
-//     const slideWidth = slide.clientWidth;
-//     slidesContainer.scrollLeft -= slideWidth;
-// })
