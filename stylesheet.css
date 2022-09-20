@@ -114,13 +114,6 @@ main {
     border: none;
     font-size: 3rem;
     padding: 0;
-    /* height: 0px; */
-}
-
-.arrow-left:hover, .arrow-right:hover {
-    transition-property: color;
-    transition-duration: 0.4s;
-    color: #D1AA48;
 }
 
 .arrow-right {
@@ -390,6 +383,11 @@ footer div a {
     }
     
     /* INDEX PAGE */
+    .arrow-left:hover, .arrow-right:hover {
+        transition-property: color;
+        transition-duration: 0.4s;
+        color: #D1AA48;
+    }
 
     .arrow-left, .arrow-right {
         font-size: 6rem;
