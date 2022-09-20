@@ -13,6 +13,8 @@ const form = document.querySelector(".contactForm");
 const submitBtn = document.querySelector("#submitBTN");
 
 
+
+
 const checkLength = (value, reqLength) => {
     if (value.trim().length > reqLength){
         return true;
@@ -64,6 +66,7 @@ function validateForm(event){
         submitBtn.innerHTML = `Submit`;
         submitBtn.style.backgroundColor = "#D1AA48";
     }
+
 }
 
 submitBtn.addEventListener("click", validateForm);
@@ -104,3 +107,17 @@ nameInput.addEventListener("keyup", validateName);
 subjectInput.addEventListener("keyup", validateSubject);
 messageInput.addEventListener("keyup", validateMessage);
 emailInput.addEventListener("keyup", checkingEmail);
+
+// const url = "https://smarterfitness.oskarjenssen.com/wp-json/contact-form-7/v1/contact-forms/94";
+
+// const sendForm = async() => {
+//     try{
+//         const response = await fetch(url, {
+//             method: form.method = "post",
+//         })
+//     } catch{
+
+//     }
+// }
+
+// sendForm();

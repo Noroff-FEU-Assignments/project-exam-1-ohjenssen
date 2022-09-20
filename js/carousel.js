@@ -33,7 +33,7 @@ const getPosts = async (url) => {
                                     <button class="arrow-left" onclick="plusSlides(-1)">&#10094;</button>
                                     <button class="arrow-right" onclick="plusSlides(1)">&#10095;</button>`;
     
-    for (let i = 0; i < posts.length; i++){
+    for (let i = 0; i < 5; i++){
         const featuredImage = posts[i]._embedded["wp:featuredmedia"][0]["source_url"];
         const id = posts[i].id;
 

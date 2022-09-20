@@ -1,4 +1,4 @@
-const searchUrl = "https://smarterfitness.oskarjenssen.com/wp-json/wp/v2/posts?per_page=100";
+const searchUrl = "https://smarterfitness.oskarjenssen.com/wp-json/wp/v2/posts?per_page=100&_embed";
 const searchButton = document.getElementById("searchButton");
 const searchBar = document.getElementById("searchBar");
 
@@ -6,9 +6,10 @@ const postContainers = document.getElementsByClassName("somePost");
 
 const searchPosts = async () =>{
     try {
-        const response = await fetch(url)
+        const response = await fetch(searchUrl)
         const posts = await response.json();
-        
+        console.log(posts.length)
+
         const input = searchBar.value.toUpperCase();
         postsSection.innerHTML = "";
         
@@ -17,6 +18,7 @@ const searchPosts = async () =>{
             const specificPost = posts[i].title.rendered.toUpperCase();
             const featuredImage = posts[i]._embedded["wp:featuredmedia"][0]["source_url"]; // Selecting image
             const id = posts[i].id; // Selecting each posts unique id to use in the query parameter
+
             
             if (specificPost.indexOf(input) > -1){
                 
@@ -26,6 +28,8 @@ const searchPosts = async () =>{
                                 <a href="specificPost.html?id=${id}" class="titleLink">${posts[i].title.rendered}</a>
                             </div>`;
             }
+
+            morePostsSection.innerHTML = ``; // Removes the button when user is searching
 
         }
     } catch {

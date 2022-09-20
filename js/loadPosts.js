@@ -60,7 +60,7 @@ const getMorePosts = async () => {
                                             </div>`;
         }
         
-        pageNum += 1;
+        pageNum += 1; // Adding 1 to the value of the page parameter so that on the next click, the next page of posts are loaded
         seeMoreUrl = "https://smarterfitness.oskarjenssen.com/wp-json/wp/v2/posts?page=" + pageNum + "&_embed";
 
     } catch {
