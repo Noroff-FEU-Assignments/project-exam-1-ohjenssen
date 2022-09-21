@@ -1,22 +1,21 @@
+const formUrl = "https://smarterfitness.oskarjenssen.com/wp-json/contact-form-7/v1/contact-forms/94/feedback";
+
 const nameTxt = document.querySelector(".name");
 const emailTxt = document.querySelector(".email");
 const subjectTxt = document.querySelector(".subject");
 const messageTxt = document.querySelector(".message");
 
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const subjectInput = document.getElementById("subject");
-const messageInput = document.getElementById("message");
+const nameInput = document.getElementById("your-name");
+const emailInput = document.getElementById("your-email");
+const subjectInput = document.getElementById("your-subject");
+const messageInput = document.getElementById("your-message");
 
 const main = document.querySelector("main");
 const form = document.querySelector(".contactForm");
 const submitBtn = document.querySelector("#submitBTN");
 
-
-
-
 const checkLength = (value, reqLength) => {
-    if (value.trim().length > reqLength){
+    if (value.replace(/\s/g, '').length > reqLength){ // The regex trims away all the spaces, not just on the sides
         return true;
     } else {
         return false;
@@ -30,6 +29,21 @@ const validateEmail = (email) => {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   };
+
+
+  const sendForm = async () => { // Sends values from the form to contact form 7 endpoint
+    try {
+        let response = await fetch(formUrl, {
+            method: 'POST',
+            body: new FormData(form),
+        });
+        const result = await response.json();
+        console.log(result)
+
+    } catch {
+        console.log("nope")
+    }
+};
 
 function validateForm(event){
     event.preventDefault();
@@ -62,6 +76,8 @@ function validateForm(event){
         submitBtn.innerHTML = `Message sent!`
         submitBtn.style.backgroundColor = "#0AFF00"
         submitBtn.disabled = true;
+        sendForm();
+        
     } else {
         submitBtn.innerHTML = `Submit`;
         submitBtn.style.backgroundColor = "#D1AA48";
@@ -107,17 +123,3 @@ nameInput.addEventListener("keyup", validateName);
 subjectInput.addEventListener("keyup", validateSubject);
 messageInput.addEventListener("keyup", validateMessage);
 emailInput.addEventListener("keyup", checkingEmail);
-
-// const url = "https://smarterfitness.oskarjenssen.com/wp-json/contact-form-7/v1/contact-forms/94";
-
-// const sendForm = async() => {
-//     try{
-//         const response = await fetch(url, {
-//             method: form.method = "post",
-//         })
-//     } catch{
-
-//     }
-// }
-
-// sendForm();
