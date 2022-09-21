@@ -17,13 +17,15 @@ const loadSpecificPost = async (url) => {
     const post = await response.json(url);
 
     const featuredImage = post._embedded["wp:featuredmedia"][0]["source_url"]
+    const altText = post._embedded["wp:featuredmedia"][0]["alt_text"]
+    // console.log(altText)
     
     docTitle.innerHTML = post.title.rendered;
 
     pageTitle.innerHTML =`<h1>${post.title.rendered}</h1>`;
             
     articleTop.innerHTML =  `${post.excerpt.rendered}
-                            <img src="${featuredImage}" class="featuredImage">`;
+                            <img src="${featuredImage}" class="featuredImage" alt="${altText}">`;
 
     bodyContent.innerHTML = `${post.content.rendered} <p>(Click to enlarge)</p>`;
 

@@ -6,9 +6,9 @@ const postContainers = document.getElementsByClassName("somePost");
 
 const searchPosts = async () =>{
     try {
+        event.preventDefault()
         const response = await fetch(searchUrl)
         const posts = await response.json();
-        console.log(posts.length)
 
         const input = searchBar.value.toUpperCase();
         postsSection.innerHTML = "";
@@ -27,6 +27,8 @@ const searchPosts = async () =>{
                                 <a href="specificPost.html?id=${id}"><img src="${featuredImage}" class="featuredImage"></a>
                                 <a href="specificPost.html?id=${id}" class="titleLink">${posts[i].title.rendered}</a>
                             </div>`;
+            } else {
+                console.log("not passed")
             }
 
             morePostsSection.innerHTML = ``; // Removes the button when user is searching

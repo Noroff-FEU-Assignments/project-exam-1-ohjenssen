@@ -122,20 +122,6 @@ main {
     border-radius: 2rem 0 0 2rem;
 }
 
-/* .crselBTN {
-    display: block;
-    border-radius: 10px;
-    border: none;
-    text-decoration: none;
-    color: #10183F;
-    background-color: #D1AA48;
-    text-align: center;
-    font-weight: 500;
-    font-size: 1em;
-    padding: 5px 30px 5px 30px;
-    width: 33.3%;
-} */
-
 .crselBTN:hover {
     animation-name: shine;
     animation-duration: 2s;
@@ -260,27 +246,21 @@ main {
     margin-bottom: 40px;
 }
 
-.somePost a{
+.titleLink{
     font-size: 1.5em;
 }
 
-.somePost a:hover{
-    color:#D1AA48;
-    transition-duration: 0.6s
-}
-
 .somePost:hover{
-    color:#D1AA48;
-    opacity: 80%;
+    opacity: 75%;
     transition-duration: 0.6s;
     cursor: pointer;
 }
 
 .featuredImage {
     width: 100%;
-    min-height: 100px;
     border-radius: 10px;
     margin-bottom: 0px;
+    min-height: 200px;
 }
 
 .morePosts {
@@ -430,6 +410,10 @@ footer div a {
     .somePost {
         width: 300px;
         margin: 20px;
+    }
+
+    .postspageImg {
+        max-height: 200px;
     }
 
     .ctaBTN {
