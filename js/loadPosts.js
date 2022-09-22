@@ -20,7 +20,7 @@ const getPosts = async () => {
             
             
             postsSection.innerHTML +=   `<div class="somePost"">
-                                            <a href="specificPost.html?id=${id}"><img src="${featuredImage}" class="featuredImage postspageImg" alt="${altText}"></a>
+                                            <a href="specificPost.html?id=${id}"><img src="${featuredImage}" class="featuredImage" alt="${altText}"></a>
                                             <a href="specificPost.html?id=${id}" class="titleLink">${posts[i].title.rendered}</a>
                                         </div>`;
             

@@ -71,7 +71,7 @@ nav a:hover, .footer_links a:hover{
     border-bottom: 2px solid white;
 }
 
-/* Main */
+/* General */
 main {
     margin-top: 60px;
     /* display: flex;
@@ -98,6 +98,10 @@ main {
     font-size: 1em;
 }
 
+.crselImg, .crselText, #searchBar, #searchButton, .featuredImage, .ctaBTN, .featuredImageSpecific, figure img, .contactForm {
+    border-radius: 10px;
+}
+
 /* INDEX PAGE */
 
 .latestPosts {
@@ -122,11 +126,6 @@ main {
     border-radius: 2rem 0 0 2rem;
 }
 
-.crselBTN:hover {
-    animation-name: shine;
-    animation-duration: 2s;
-}
-
 .crselContainer {
     max-width: 800px;
     position: relative;
@@ -147,7 +146,7 @@ main {
 
 .crselImg {
     width: 100%;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .txtContainer {
@@ -160,9 +159,9 @@ main {
     text-align: center;
     bottom: 20px;
     padding: 5px 10px 5px 10px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     color: #10183F;
-    background-color: #D1AA48;
+    background-color: #D1AA48; 
     font-weight: 500;
 }
 
@@ -219,13 +218,13 @@ main {
     margin-bottom: 15px;
     padding: 10px;
     border: none;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     width: 190px;
 }
 
 #searchButton {
     padding: 10px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     border: none;
 }
 
@@ -258,7 +257,7 @@ main {
 
 .featuredImage {
     width: 100%;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     margin-bottom: 0px;
     min-height: 200px;
 }
@@ -270,7 +269,7 @@ main {
 }
 
 .ctaBTN {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     border: none;
     padding: 10px 0px;
     text-decoration: none;
@@ -289,35 +288,41 @@ main {
 
 /* SPECIFIC POSTS PAGE */
 
-.article_top {
+.article_top, .bodyContent {
     max-width: 800px;
-}
-
-.bodyText {
-    max-width: 1000px;
     margin-bottom: 20px;
 }
 
-.specific h1, .bodyText h2{
+.bodyContent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.specific h1, .bodyContent h2{
     font-size: 2em;
     margin-bottom: 0px;
 }
 
-.article_top p, .bodyText p {
+.article_top p, .bodyContent p {
     margin-top: 0px;
     margin-bottom: 10px;
 }
 
-figure {
-    margin: 0;
+.featuredImageSpecific {
+    width: 100%;
+    /* border-radius: 10px; */
     margin-bottom: 0px;
-    max-width: 800px;
+}
+
+figure {
+    margin: 10px 10px 0 0;
+    max-width: 200px;
 }
 
 figure img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .modal {
@@ -349,7 +354,7 @@ figure img {
     background-color: #62748C;
     display: flex;
     flex-direction: column;
-    border-radius: 5px;
+    /* border-radius: 10px; */
 }
 
 .validation {
@@ -363,6 +368,12 @@ figure img {
 
 #message{
     height: 50px;
+}
+
+/* ABOUT PAGE */
+
+.aboutImg {
+    width: 100%;
 }
 
 /* Footer */
@@ -412,7 +423,7 @@ footer div a {
         margin: 20px;
     }
 
-    .postspageImg {
+    .featuredImage {
         max-height: 200px;
     }
 
@@ -447,7 +458,7 @@ footer div a {
         font-size: 2rem;
     }
 
-    /*  */
+    /* Footer */
 
     .footer_links {
         justify-content: flex-start;
