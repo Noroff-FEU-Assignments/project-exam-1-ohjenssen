@@ -28,7 +28,7 @@ const searchPosts = async () =>{
                                 <a href="specificPost.html?id=${id}" class="titleLink">${posts[i].title.rendered}</a>
                             </div>`;
             } else {
-                console.log("not passed")
+                console.log("Could not retrieve posts!")
             }
 
             morePostsSection.innerHTML = ``; // Removes the button when user is searching

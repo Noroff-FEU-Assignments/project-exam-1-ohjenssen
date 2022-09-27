@@ -3,14 +3,13 @@ const params = new URLSearchParams(queryString);
 const queryID = params.get("id");
 
 const url = "https://smarterfitness.oskarjenssen.com/wp-json/wp/v2/posts/" + queryID + "?_embed";
-console.log(url)
+const commentUrl = "https://smarterfitness.oskarjenssen.com/wp-json/wp/v2/comments?post=" + queryID;
 
 const modalContainer = document.querySelector(".modalContainer");
 const docTitle = document.querySelector("title");
 const pageTitle = document.querySelector(".pageTitle");
 const articleTop = document.querySelector(".article_top");
 const bodyContent = document.querySelector(".bodyContent")
-
 
 const loadSpecificPost = async (url) => {
     const response = await fetch(url);
@@ -27,6 +26,8 @@ const loadSpecificPost = async (url) => {
                             <img src="${featuredImage}" class="featuredImageSpecific" alt="${altText}">`;
 
     bodyContent.innerHTML = post.content.rendered;
+
+
 
     const pictureContent = document.querySelectorAll("figure img");
 

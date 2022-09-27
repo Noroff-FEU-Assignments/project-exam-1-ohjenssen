@@ -74,9 +74,6 @@ nav a:hover, .footer_links a:hover{
 /* General */
 main {
     margin-top: 60px;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
 }
 
 .loader {
@@ -98,7 +95,7 @@ main {
     font-size: 1em;
 }
 
-.crselImg, .crselText, #searchBar, #searchButton, .featuredImage, .ctaBTN, .featuredImageSpecific, figure img, .contactForm {
+.crselImg, .crselText, #searchBar, #searchButton, .featuredImage, .ctaBTN, .featuredImageSpecific, figure img{
     border-radius: 10px;
 }
 
@@ -146,7 +143,6 @@ main {
 
 .crselImg {
     width: 100%;
-    /* border-radius: 10px; */
 }
 
 .txtContainer {
@@ -159,7 +155,6 @@ main {
     text-align: center;
     bottom: 20px;
     padding: 5px 10px 5px 10px;
-    /* border-radius: 10px; */
     color: #10183F;
     background-color: #D1AA48; 
     font-weight: 500;
@@ -218,13 +213,11 @@ main {
     margin-bottom: 15px;
     padding: 10px;
     border: none;
-    /* border-radius: 10px; */
     width: 190px;
 }
 
 #searchButton {
     padding: 10px;
-    /* border-radius: 10px; */
     border: none;
 }
 
@@ -257,7 +250,6 @@ main {
 
 .featuredImage {
     width: 100%;
-    /* border-radius: 10px; */
     margin-bottom: 0px;
     min-height: 200px;
 }
@@ -269,7 +261,6 @@ main {
 }
 
 .ctaBTN {
-    /* border-radius: 10px; */
     border: none;
     padding: 10px 0px;
     text-decoration: none;
@@ -310,7 +301,6 @@ main {
 
 .featuredImageSpecific {
     width: 100%;
-    /* border-radius: 10px; */
     margin-bottom: 0px;
 }
 
@@ -322,7 +312,6 @@ figure {
 figure img {
     width: 100%;
     height: auto;
-    /* border-radius: 10px; */
 }
 
 .modal {
@@ -354,7 +343,6 @@ figure img {
     background-color: #62748C;
     display: flex;
     flex-direction: column;
-    /* border-radius: 10px; */
 }
 
 .validation {

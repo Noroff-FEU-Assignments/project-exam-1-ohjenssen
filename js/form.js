@@ -15,7 +15,7 @@ const form = document.querySelector(".contactForm");
 const submitBtn = document.querySelector("#submitBTN");
 
 const checkLength = (value, reqLength) => {
-    if (value.replace(/\s/g, '').length > reqLength){ // The regex trims away all the spaces, not just on the sides
+    if (value.replace(/\s/g, '').length > reqLength){ // The regex trims away all the spaces between characters
         return true;
     } else {
         return false;
@@ -31,7 +31,7 @@ const validateEmail = (email) => {
   };
 
 
-  const sendForm = async () => { // Sends values from the form to contact form 7 endpoint
+  const sendForm = async () => { // Sends the form to contact form 7 endpoint
     try {
         let response = await fetch(formUrl, {
             method: 'POST',
@@ -41,7 +41,7 @@ const validateEmail = (email) => {
         console.log(result)
 
     } catch {
-        console.log("nope")
+        console.log("Form not working")
     }
 };
 
@@ -49,9 +49,9 @@ function validateForm(event){
     event.preventDefault();
 
     if (!checkLength(nameInput.value, 5)){
-        nameTxt.style.color = "#830101";
+        nameTxt.style.color = "#830101"; // Red
     } else {
-        nameTxt.style.color = "#0AFF00";
+        nameTxt.style.color = "#0AFF00"; // Green
     }
 
     if (!checkLength(subjectInput.value, 15)){
@@ -87,6 +87,8 @@ function validateForm(event){
 
 submitBtn.addEventListener("click", validateForm);
 
+
+// Checks input, making the text white when previosly red
 function validateName(){
     if ((!checkLength(nameInput.value, 5))){
         nameTxt.style.color = "white";
@@ -123,3 +125,4 @@ nameInput.addEventListener("keyup", validateName);
 subjectInput.addEventListener("keyup", validateSubject);
 messageInput.addEventListener("keyup", validateMessage);
 emailInput.addEventListener("keyup", checkingEmail);
+

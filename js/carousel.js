@@ -36,10 +36,11 @@ const getPosts = async (url) => {
     for (let i = 0; i < 5; i++){
         const featuredImage = posts[i]._embedded["wp:featuredmedia"][0]["source_url"];
         const id = posts[i].id;
+        const altText = posts[i]._embedded["wp:featuredmedia"][0]["alt_text"];
 
         crselContainer.innerHTML += `
                                         <div class="crselSlide">
-                                            <img src="${featuredImage}" class="crselImg">
+                                            <img src="${featuredImage}" class="crselImg" alt="${altText}">
                                             <div class="txtContainer">
                                                 <a class="crselText" href="specificPost.html?id=${id}">${posts[i].title.rendered}</a>
                                             <div>

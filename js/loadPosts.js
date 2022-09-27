@@ -54,10 +54,11 @@ const getMorePosts = async () => {
         for (let i = 0; i < posts.length; i++){
             const featuredImage = posts[i]._embedded["wp:featuredmedia"][0]["source_url"]; // Selecting image
             const id = posts[i].id; // Giving each post a unique id in the query parameter
+            const altText = posts[i]._embedded["wp:featuredmedia"][0]["alt_text"];
 
             postsSection.innerHTML +=   `<div class="somePost">
-                                                <a href="specificPost.html?id=${id}"><img src="${featuredImage}" class="featuredImage"></a>
-                                                <a href="specificPost.html?id=${id}">${posts[i].title.rendered}</a>
+                                                <a href="specificPost.html?id=${id}"><img src="${featuredImage}" class="featuredImage" alt="${altText}"></a>
+                                                <a href="specificPost.html?id=${id}" class="titleLink">${posts[i].title.rendered}</a>
                                             </div>`;
         }
         
