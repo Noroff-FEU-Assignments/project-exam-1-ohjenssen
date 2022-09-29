@@ -294,7 +294,7 @@ main {
     margin-bottom: 0px;
 }
 
-.article_top p, .bodyContent p {
+.article_top p, .bodyContent p, .pageTitle p{
     margin-top: 0px;
     margin-bottom: 10px;
 }

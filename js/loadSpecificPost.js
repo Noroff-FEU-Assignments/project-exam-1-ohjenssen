@@ -20,7 +20,8 @@ const loadSpecificPost = async (url) => {
     
     docTitle.innerHTML = post.title.rendered;
 
-    pageTitle.innerHTML =`<h1>${post.title.rendered}</h1>`;
+    pageTitle.innerHTML =   `<h1>${post.title.rendered}</h1>
+                            <p>Published ${post.date.substring(0, 10)}</p>`;
             
     articleTop.innerHTML =  `${post.excerpt.rendered}
                             <img src="${featuredImage}" class="featuredImageSpecific" alt="${altText}">`;
